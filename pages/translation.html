@@ -26,17 +26,12 @@
                 <a class="nav-link active" aria-current="page" href="file_solving.html">Solve file</a>
                 <a class="nav-link" href="translation.html">AI Translation</a>
                 <a class="nav-link" href="text_analyzing.html">Text analyzing</a>
+                <a class="nav-link" href="history.html">History</a>
             </div>
             </div>
         </nav>
     </div>
     <div class="file-upload">
-    <!-- <div class="image-upload-wrap" id="upload-field">
-        <input class="file-upload-input" id="drag-and-drop" type='file' onchange="readURL(this);" accept="image/*" />
-        <div class="drag-text">
-        <h3>Drag and drop a file or select add Image</h3>
-        </div>
-    </div> -->
     <div class="file-upload-content">
         <img class="file-upload-image" src="#" alt="your image" />
         <div class="image-title-wrap">
@@ -68,8 +63,8 @@
                 <div id="container">
                     <textarea id="input-area" type="text" class="card" style="padding: 15px; resize: none; border: 1px solid black; border-radius: 0px 0px 0px 10px; height: 350px; width: 400px; overflow: auto; font-size: x-large;"></textarea>
                     <div class="image-upload-wrap" id="upload-field" style="display: none; border: 1px solid black; border-radius: 0px 0px 0px 10px; height: 350px; width: 400px;">
-                        <div id="border-container" style="height: 340px; width: 400px; background-image: url('/assets/upload.svg'); background-size: 400px;">
-                            <input class="file-upload-input" id="drag-and-drop" type='file' onchange="readURL(this);" accept="image/*"/>
+                        <div style="height: 340px; width: 400px;">
+                            <input class="form-control" id="input-image" type='file' onchange="readURL(this);" style="margin: auto; width: 300px; margin-top:130px" accept="image/*"/>
                             <div class="drag-text">
                             </div>
                         </div>

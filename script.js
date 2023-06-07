@@ -40,7 +40,7 @@
   }
 
   async function translateFile() {
-    const input = document.getElementById('drag-and-drop');
+    const input = document.getElementById('input-image');
     const file = input.files[0];
     if (!file) {
       alert('Please, choose a file');
@@ -149,3 +149,35 @@
       $('.image-upload-wrap').removeClass('image-dropping');
   });
   
+  function fillTable() {
+    const url = 'http://localhost:8080/api/v1/history';
+    const response = fetch(url, {
+        method: 'GET'
+      });
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const tableBody = document.querySelector('#historyTable tbody');
+
+        for (const obj of data) {
+            const row = document.createElement('tr');
+            
+            const field1Cell = document.createElement('td');
+            field1Cell.textContent = obj.type;
+            row.appendChild(field1Cell);
+          
+            const field2Cell = document.createElement('td');
+            field2Cell.textContent = obj.requestText;
+            row.appendChild(field2Cell);
+          
+            const field3Cell = document.createElement('td');
+            field3Cell.textContent = obj.responseText;
+            row.appendChild(field3Cell);
+          
+            tableBody.appendChild(row);
+        }
+        })
+      .catch(error => {
+        console.error('Ошибка получения данных:', error);
+      });
+    }
